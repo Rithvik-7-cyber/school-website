@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PM SHRI TGSWRS/JC(Boys) ALWAL @ CHEPYAL</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, bold;
+}
+
+body{
+    background:#f4f8ff;
+}
+
+/* HEADER SECTION */
+.header{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+    color:white;
+}
+
+/* SLIDER IMAGES */
+.slides img{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1.5s ease-in-out;
+}
+
+.slides img.active{
+    opacity:1;
+}
+
+/* DARK OVERLAY */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+.title{
+    position:absolute;
+    top:100px;
+    width:100%;
+    text-align:center;
+    z-index:2;
+}
+
+.title h1{
+    font-size:42px;
+}
+
+.title h3{
+    margin-top:10px;
+    font-weight:normal;
+}
+
+/* DAILY NOTICE */
+.notice{
+    position:absolute;
+    bottom:50px;
+    width:100%;
+    text-align:center;
+    z-index:2;
+}
+
+.notice-box{
+    display:inline-block;
+    background:#ffcc00;
+    color:#000;
+    padding:10px 20px;
+    border-radius:5px;
+    font-weight:bold;
+    animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+    0%{opacity:1;}
+    50%{opacity:0.5;}
+    100%{opacity:1;}
+}
+
+/* NAVIGATION */
+nav{
+    position:absolute;
+    top:20px;
+    width:100%;
+    text-align:center;
+    z-index:3;
+}
+
+nav button{
+    padding:10px 20px;
+    margin:5px;
+    border:none;
+    background:white;
+    color:#002b5c;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+nav button:hover{
+    background:#002b5c;
+    color:white;
+}
+
+/* PAGE CONTENT */
+.page{
+    display:none;
+    padding:80px 20px;
+    text-align:center;
+    animation:fadePage 0.8s ease-in-out;
+    position: relative;
+}
+
+@keyframes fadePage{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+h2{
+    color:#002b5c;
+    margin-bottom:20px;
+}
+
+/* BACK BUTTON */
+.back-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+    padding:10px 20px;
+    background:#002b5c;
+    color:white;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+    z-index:10;
+}
+
+/* FORM STYLE */
+form input{
+    width:300px;
+    padding:10px;
+    margin:8px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+input[type="submit"]{
+    background:#002b5c;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+footer{
+    background:#002b5c;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header" id="headerSection">
+
+<nav>
+    <button onclick="showHome()">Home</button>
+    <button onclick="showPage('about')">About</button>
+    <button onclick="showPage('gallery')">Gallery</button>
+    <button onclick="showPage('contact')">Contact</button>
+    <button onclick="showPage('principal')">Principal</button>
+    <button onclick="showPage('admission')">Admission</button>
+    <button onclick="showPage('staff')">Staff</button>
+    <button onclick="showPage('apply')">Apply Online</button>
+</nav>
+
+<!-- YOUR ORIGINAL IMAGES -->
+<div class="slides">
+    <img src="C:\Users\TGSWRS\Downloads\WhatsApp Image 2025-12-18 at 3.22.43 PM (1).jpeg" class="active">
+    <img src="C:\Users\TGSWRS\Downloads\WhatsApp Image 2025-12-19 at 4.31.52 PM.jpeg">
+    <img src="C:\Users\TGSWRS\Pictures\unnamed.webp">
+    <img src="https://via.placeholder.com/1600x900/0066cc/ffffff?text=School+Photo+4">
+</div>
+
+<div class="overlay"></div>
+
+<div class="title">
+    <h1>PM SHRI TGSWRS/JC(Boys)</h1>
+    <h3>ALWAL @ CHEPYAL</h3>
+    <p>Empowering Education with Excellence</p>
+</div>
+
+<div class="notice">
+    <div class="notice-box">
+        📢 Daily Notice: Unit Test Starts From 20th February
+    </div>
+</div>
+
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+    <button class="back-btn" onclick="showHome()">← Back</button>
+    <h2>About Our School</h2>
+    <p>Our institution focuses on academic excellence, discipline and holistic student development.</p>
+</div>
+
+<!-- GALLERY -->
+<div id="gallery" class="page">
+    <button class="back-btn" onclick="showHome()">← Back</button>
+    <h2>School Gallery</h2>
+    <img src="C:\Users\TGSWRS\Downloads\WhatsApp Image 2025-12-18 at 3.22.43 PM (1).jpeg" width="250">
+    <img src="C:\Users\TGSWRS\Downloads\WhatsApp Image 2025-12-19 at 4.31.52 PM.jpeg" width="250">
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+    <button class="back-btn" onclick="showHome()">← Back</button>
+    <h2>Contact Us</h2>
+    <p>Email: school@email.com</p>
+    <p>Phone: +91 9876543210</p>
+    <p>Address: Telangana</p>
+</div>
+
+<!-- PRINCIPAL -->
+<div id="principal" class="page">
+    <button class="back-btn" onclick="showHome()">← Back</button>
+    <h2>Principal's Message</h2>
+    <p>Welcome to PM SHRI TGSWRS/JC(Boys). We are committed to academic excellence and character building.</p>
+</div>
+
+<!-- ADMISSION -->
+<div id="admission" class="page">
+    <button class="back-btn" onclick="showHome()">← Back</button>
+    <h2>Admissions 2026-27</h2>
+    <p>Admissions are open as per Telangana Residential School norms.</p>
+</div>
+
+<!-- STAFF -->
+<div id="staff" class="page">
+    <button class="back-btn" onclick="showHome()">← Back</button>
+    <h2>Our Staff</h2>
+    <p><strong>Principal:</strong> Mr. ________</p>
+</div>
+
+<!-- APPLY ONLINE -->
+<div id="apply" class="page">
+    <button class="back-btn" onclick="showHome()">← Back</button>
+    <h2>Online Application Form</h2>
+    <form>
+        <input type="text" placeholder="Student Name" required><br>
+        <input type="text" placeholder="Father Name" required><br>
+        <input type="tel" placeholder="Mobile Number" required><br>
+        <input type="text" placeholder="Class Applying For" required><br>
+        <input type="submit" value="Submit Application">
+    </form>
+</div>
+
+<footer>
+    &copy; 2026 PM SHRI TGSWRS/JC(Boys) ALWAL @ CHEPYAL
+</footer>
+
+<script>
+let slides=document.querySelectorAll(".slides img");
+let index=0;
+
+function changeSlide(){
+    slides[index].classList.remove("active");
+    index=(index+1)%slides.length;
+    slides[index].classList.add("active");
+}
+setInterval(changeSlide,3000);
+
+function showHome(){
+    document.getElementById("headerSection").style.display="block";
+    hidePages();
+}
+
+function showPage(pageId){
+    document.getElementById("headerSection").style.display="none";
+    hidePages();
+    document.getElementById(pageId).style.display="block";
+}
+
+function hidePages(){
+    let pages=document.getElementsByClassName("page");
+    for(let i=0;i<pages.length;i++){
+        pages[i].style.display="none";
+    }
+}
+</script>
+
+</body>
+</html>
